@@ -1,4 +1,5 @@
 # Project for learning GO
+This project is for me to test and implement best practices for Go developement.
 
 ## Folders
 
