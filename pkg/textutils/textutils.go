@@ -11,5 +11,5 @@ func FirstN(s string, n int) string {
 }
 
 func LastN(s string, n int) string {
-	return "Not implemented"
+	return s[len(s)-n:]
 }
