@@ -2,42 +2,25 @@ package textutils
 
 import "testing"
 
-func TestFirstN_SendNWithinStringLength_ReturnStringOfNLength(t *testing.T) {
-	s := "Hello, world!"
-	n := 5
-	want := "Hello"
-	got := FirstN(s, n)
-	if got != want {
-		t.Errorf("FirstN(%q, %d) = %q; want %q", s, n, got, want)
+func TestFirstN(t *testing.T) {
+	cases := []struct {
+		name string
+		s    string
+		n    int
+		want string
+	}{
+		{"SendNWithinStringLength", "Hello, world!", 5, "Hello"},
+		{"SendNegativeNumber", "Hello, world!", -3, ""},
+		{"SendEmptyString", "", 0, ""},
+		{"SendHigherNumberThanStringLength", "Hello, world!", 50, "Hello, world!"},
 	}
-}
 
-func TestFirstN_SendNegativeNumber_ReturnEmptyString(t *testing.T) {
-	s := "Hello, world!"
-	n := -3
-	want := ""
-	got := FirstN(s, n)
-	if got != want {
-		t.Errorf("FirstN(%q, %d) = %q; want %q", s, n, got, want)
-	}
-}
-
-func TestFirstN_SendEmptyString_ReturnEmptyString(t *testing.T) {
-	s := ""
-	n := 0
-	want := ""
-	got := FirstN(s, n)
-	if got != want {
-		t.Errorf("FirstN(%q, %d) = %q; want %q", s, n, got, want)
-	}
-}
-
-func TestFirstN_SendHigherNumberThanStringLength_ReturnFullString(t *testing.T) {
-	s := "Hello, world!"
-	n := 50
-	want := "Hello, world!"
-	got := FirstN(s, n)
-	if got != want {
-		t.Errorf("FirstN(%q, %d) = %q; want %q", s, n, got, want)
+	for _, c := range cases {
+		t.Run(c.name, func(t *testing.T) {
+			got := FirstN(c.s, c.n)
+			if got != c.want {
+				t.Errorf("FirstN(%q, %d) = %q; want %q", c.s, c.n, got, c.want)
+			}
+		})
 	}
 }
