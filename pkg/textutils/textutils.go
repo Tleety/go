@@ -11,5 +11,11 @@ func FirstN(s string, n int) string {
 }
 
 func LastN(s string, n int) string {
-	return s[len(s)-n:]
+	if n < 0 {
+		return ""
+	} else if n > len(s) {
+		return s
+	} else {
+		return s[len(s)-n:]
+	}
 }
