@@ -32,7 +32,7 @@ func TestLastN(t *testing.T) {
 		n    int
 		want string
 	}{
-		{"SendNWithinStringLength", "Hello, world!", 5, "world"},
+		{"SendNWithinStringLength", "Hello, world!", 5, "orld!"},
 		{"SendNegativeNumber", "Hello, world!", -3, ""},
 		{"SendEmptyString", "", 0, ""},
 		{"SendHigherNumberThanStringLength", "Hello, world!", 50, "Hello, world!"},
