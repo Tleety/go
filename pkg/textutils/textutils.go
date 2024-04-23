@@ -9,3 +9,7 @@ func FirstN(s string, n int) string {
 		return s[:n]
 	}
 }
+
+func LastN(s string, n int) string {
+	return "Not implemented"
+}
