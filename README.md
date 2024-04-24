@@ -1,4 +1,4 @@
-[![Go](https://github.com/Tleety/go/actions/workflows/go.yml/badge.svg)](https://github.com/Tleety/go/actions/workflows/go.yml)
+[![Latest Build](https://github.com/Tleety/go/actions/workflows/go.yml/badge.svg)](https://github.com/Tleety/go/actions/workflows/go.yml)
 
 # Project for learning GO
 This project is for me to test and implement best practices for Go developement.
